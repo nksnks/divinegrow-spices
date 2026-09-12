@@ -19,14 +19,8 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
       </div>
       <header className="sticky top-0 z-30 border-b border-[#dfe8e1]/80 bg-[#f8f5ee]/95 backdrop-blur-md">
         <div className="section-shell flex h-[76px] items-center justify-between">
-          <Link href="/" className="group flex items-center gap-3 no-underline" onClick={() => setMenuOpen(false)}>
-            <span className="grid h-10 w-10 place-items-center rounded-full bg-[#0b6e4f] text-[#f8f5ee] shadow-lg shadow-[#0b6e4f]/20">
-              <span className="display text-xl font-bold">D</span>
-            </span>
-            <span>
-              <span className="display block text-[20px] font-bold leading-none text-[#073c2d]">DivineGrow</span>
-              <span className="mt-1 block text-[9px] font-bold uppercase tracking-[.23em] text-[#d4a017]">Premium spices · LLP</span>
-            </span>
+          <Link href="/" className="group flex items-center no-underline" onClick={() => setMenuOpen(false)} aria-label="DivineGrow home">
+            <img src="/manus-storage/divinegrow-logo-cropped_f7fe5518.png" alt="DivineGrow — Rooted in values, growing excellence" className="h-[54px] w-[156px] object-contain object-left" />
           </Link>
 
           <nav className="hidden items-center gap-8 md:flex" aria-label="Main navigation">
