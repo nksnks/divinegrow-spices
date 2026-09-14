@@ -1,0 +1,19 @@
+[Unit]
+Description=DivineGrow LLP website
+After=network.target mysql.service
+
+[Service]
+Type=simple
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/var/www/divinegrow/app
+EnvironmentFile=/etc/divinegrow.env
+ExecStart=/usr/bin/env bash -lc '/home/ubuntu/.nvm/nvm-exec node dist/index.js'
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target

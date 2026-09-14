@@ -1,6 +1,8 @@
 import { ArrowRight, Check, Globe2, Leaf, PackageCheck, ShieldCheck, Truck } from "lucide-react";
+import type { CSSProperties } from "react";
 import { Link } from "wouter";
 import { products } from "@/lib/products";
+import { assetPaths } from "@/lib/assets";
 
 const assurances = [
   [ShieldCheck, "Premium quality", "Carefully selected products with a quality-first mindset."],
@@ -11,7 +13,7 @@ const assurances = [
 
 export default function Home() {
   return <>
-    <section className="hero-image relative isolate overflow-hidden text-white">
+    <section className="hero-image relative isolate overflow-hidden text-white" style={{ "--hero-image-url": `url("${assetPaths.hero()}")` } as CSSProperties}>
       <div className="hero-grid absolute inset-0 -z-10 opacity-60" />
       <div className="section-shell flex min-h-[650px] items-center py-24 md:min-h-[710px]">
         <div className="max-w-2xl rise">

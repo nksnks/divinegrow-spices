@@ -5,6 +5,7 @@ import { notifyOwner } from "./_core/notification";
 import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, router } from "./_core/trpc";
 import { createEnquiry } from "./db";
+import { isSesConfigured, sendEnquiryEmail } from "./email";
 
 const enquiryInput = z.object({
   type: z.enum(["quote", "contact"]),
@@ -54,7 +55,9 @@ export const appRouter = router({
         input.quantity ? `Quantity: ${input.quantity}` : null,
         `Message: ${input.message}`,
       ].filter(Boolean).join("\n");
-      const alertSent = await notifyOwner({ title: `DivineGrow: ${label}`, content });
+      const alertSent = isSesConfigured()
+        ? await sendEnquiryEmail(`DivineGrow: ${label}`, content)
+        : await notifyOwner({ title: `DivineGrow: ${label}`, content });
       return { success: true, alertSent } as const;
     }),
   }),

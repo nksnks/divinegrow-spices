@@ -1,3 +1,5 @@
+import { assetPaths } from "@/lib/assets";
+
 export type Product = {
   slug: string;
   name: string;
@@ -10,8 +12,8 @@ export type Product = {
   image: string;
 };
 
-const spiceImage = "/manus-storage/divinegrow-spices_23bfd059.jpg";
-const saffronImage = "/manus-storage/divinegrow-saffron_0119df15.jpg";
+const spiceImage = assetPaths.spiceGallery();
+const saffronImage = assetPaths.saffronGallery();
 
 export const products: Product[] = [
   { slug: "cardamom", name: "Green Cardamom", scientific: "Elettaria cardamomum", description: "One of the world's most valuable spices, known for an intense aroma and naturally sweet flavour.", uses: ["Tea & coffee", "Desserts", "Baking", "Pharmaceuticals"], origin: "India", packaging: ["250g", "500g", "1kg", "Bulk bags"], accent: "#91ad42", image: spiceImage },

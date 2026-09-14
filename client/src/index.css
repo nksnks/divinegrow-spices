@@ -25,7 +25,7 @@ button:active, a:active { transform: scale(.98); }
 .section-shell { width: min(1120px, calc(100% - 2rem)); margin: 0 auto; }
 .text-balance { text-wrap: balance; }
 
-.hero-image { background-image: linear-gradient(90deg, rgba(7, 60, 45, .78) 0%, rgba(7, 60, 45, .48) 37%, rgba(7, 60, 45, .04) 78%), url('/manus-storage/divinegrow-hero_dd8af70f.jpg'); background-size: cover; background-position: center; }
+.hero-image { background-image: linear-gradient(90deg, rgba(7, 60, 45, .78) 0%, rgba(7, 60, 45, .48) 37%, rgba(7, 60, 45, .04) 78%), var(--hero-image-url, url('/manus-storage/divinegrow-hero_dd8af70f.jpg')); background-size: cover; background-position: center; }
 .hero-grid { background-image: linear-gradient(rgba(255,255,255,.065) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.065) 1px, transparent 1px); background-size: 48px 48px; }
 .soft-card { border: 1px solid var(--line); background: rgba(255,255,255,.72); box-shadow: 0 20px 50px rgba(9, 44, 30, .07); }
 .gold-line { height: 2px; width: 46px; background: var(--gold); }

@@ -1,6 +1,7 @@
 import { ArrowUpRight, Clock3, Mail, MapPin, Menu, Phone, X } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
+import { assetPaths } from "@/lib/assets";
 
 const navItems = [
   ["Home", "/"],
@@ -20,7 +21,7 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
       <header className="sticky top-0 z-30 border-b border-[#dfe8e1]/80 bg-[#f8f5ee]/95 backdrop-blur-md">
         <div className="section-shell flex h-[76px] items-center justify-between">
           <Link href="/" className="group flex items-center no-underline" onClick={() => setMenuOpen(false)} aria-label="DivineGrow home">
-            <img src="/manus-storage/divinegrow-logo-cropped_f7fe5518.png" alt="DivineGrow — Rooted in values, growing excellence" className="h-[54px] w-[156px] object-contain object-left" />
+            <img src={assetPaths.logo()} alt="DivineGrow — Rooted in values, growing excellence" className="h-[54px] w-[156px] object-contain object-left" />
           </Link>
 
           <nav className="hidden items-center gap-8 md:flex" aria-label="Main navigation">
